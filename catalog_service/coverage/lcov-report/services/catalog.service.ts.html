@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.17% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>30/41</span>
+                <span class='fraction'>41/41</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
+                <span class='fraction'>10/10</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
                 <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">73.17% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>30/41</span>
+                <span class='fraction'>41/41</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -110,8 +110,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -129,21 +129,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ICatalogRepository } from "../Interface/catalogRepository.interface";
 &nbsp;
@@ -169,22 +169,22 @@ export class CatalogService {
     }
   
     // instead of this we will get product from Elastic search
-    async <span class="fstat-no" title="function not covered" >getProducts(limit: number, offset: number) {</span>
-<span class="cstat-no" title="statement not covered" >      const products = await this._repository.find(limit, offset);</span>
-<span class="cstat-no" title="statement not covered" >  </span>
-<span class="cstat-no" title="statement not covered" >      return products;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    async getProducts(limit: number, offset: number) {
+      const products = await this._repository.find(limit, offset);
   
-    async <span class="fstat-no" title="function not covered" >getProduct(id: number) {</span>
-<span class="cstat-no" title="statement not covered" >      const product = await this._repository.findOne(id);</span>
-<span class="cstat-no" title="statement not covered" >      return product;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+      return products;
+    }
   
-    async <span class="fstat-no" title="function not covered" >deleteProduct(id: number) {</span>
-<span class="cstat-no" title="statement not covered" >      const response = await this._repository.delete(id);</span>
-<span class="cstat-no" title="statement not covered" >      // delete record from Elastic search</span>
-<span class="cstat-no" title="statement not covered" >      return response;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    async getProduct(id: number) {
+      const product = await this._repository.findOne(id);
+      return product;
+    }
+  
+    async deleteProduct(id: number) {
+      const response = await this._repository.delete(id);
+      // delete record from Elastic search
+      return response;
+    }
   }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -193,7 +193,7 @@ export class CatalogService {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-31T16:13:59.580Z
+                at 2024-11-01T17:17:24.011Z
             </div>
         <script src="../prettify.js"></script>
         <script>
